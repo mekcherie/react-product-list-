@@ -20,9 +20,22 @@ const categoriesAndCounts = allCategories.reduce((acc, cat) => {
         acc[cat] += 1 
     }
     return acc
+}, {})
+
+
+const catAndCounts = uniqueCategories.map(name => {
+    return { name, count: categoriesAndCounts[name] }
 })
+
+// const namesAndCategories = categoriesUnique.map((name) => ({ name, count: categoriesWithCounts[name] }))
+
+// namesAndCategories.push({ name: 'All', count: data.length })
+
 export {
     allCategories,
     uniqueCategories,
     categoriesAndCounts,
+    catAndCounts,
+    // namesAndCategories
+
 }
