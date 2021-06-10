@@ -1,4 +1,5 @@
 import {catAndCounts} from './data'
+import './Category.css'
 function Category() {
     return (
         <div>
