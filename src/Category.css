@@ -1,5 +1,11 @@
 .Category {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 1rem;
+}
+.Category > button {
+    font: 1rem;
+    padding: 0 0;
+    border-style: double;
+    border-color: burlywood;
 }

@@ -1,4 +1,19 @@
+body{
+  flex-direction: row;
+}
 .App {
+  display: flex;
+  flex-wrap: wrap;
   max-width: 900px;
-  margin: auto;
+}
+.obj {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0em 0em;
+  align-items: center;
+  grid-gap: 1rem;
+}
+.Product {
+  padding: 1rem;
+  background-color: burlywood;
 }

@@ -1,8 +1,9 @@
 import {catAndCounts} from './data'
 import './Category.css'
+
 function Category() {
     return (
-        <div>
+        <div className = "Category">
         {catAndCounts.map(obj => {
           return (
             <button>

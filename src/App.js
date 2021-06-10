@@ -1,21 +1,24 @@
 import './App.css';
-import data, {allCategories, uniqueCategories, categoriesAndCounts, catAndCounts} from './data'
+import data, { uniqueCategories} from './data'
 
 import Category from './Category'
+import Header from './Header'
 function App() {
   return (
     <div>
     <div className="App">
-       <h1>Productify</h1>
-       <p>Product Count: {data.length}</p>
-       <p>Category Count: {uniqueCategories.length}</p>
+       <Header  
+          title="productify"
+          productCount = {data.length} 
+          categoryCount = {uniqueCategories} />
 
-       <Category />
+        <Category />
        </div>
-    <div> 
+
+    <div className ="obj"> 
       {data.map(obj => {
       return (
-        <div>
+        <div className="Product">
           <h2>{obj.name}</h2>
           <p>{obj.description}</p>
           <p>Price: {obj.price}</p>
