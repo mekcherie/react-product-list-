@@ -1,26 +1,30 @@
 import './App.css';
 import data, {allCategories, uniqueCategories, categoriesAndCounts, catAndCounts} from './data'
 
-// console.log(data)
-// console.log(allCategories)
-// console.log(uniqueCategories)
-// console.log(categoriesAndCounts)
-// console.log(catAndCounts)
-
+import Category from './Category'
 function App() {
   return (
+    <div>
     <div className="App">
        <h1>Productify</h1>
        <p>Product Count: {data.length}</p>
        <p>Category Count: {uniqueCategories.length}</p>
-       {catAndCounts.map(obj => {
-         return (
-           <button>
-             {obj.name}
-             <span> {obj.count} </span>
-           </button>
-         )
-       })}
+
+       <Category />
+       </div>
+    <div> 
+      {data.map(obj => {
+      return (
+        <div>
+          <h2>{obj.name}</h2>
+          <p>{obj.description}</p>
+          <p>Price: {obj.price}</p>
+          <p>Name: {obj.name}</p>
+          <h6>Rating: {obj.rating}</h6>
+      </div>
+      )
+      })}
+    </div>
     </div>
   );
 }
