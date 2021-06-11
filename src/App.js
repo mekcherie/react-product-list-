@@ -1,19 +1,26 @@
 import './App.css';
+import {useState} from 'react'
 import data, { uniqueCategories} from './data'
-
-import Category from './Category'
 import Header from './Header'
+import Category from './Category'
+import Inventory from './Inventory';
 function App() {
+  const [category, setCategory] = useState('Kids');
   return (
     <div>
     <div className="App">
-       <Header  
+      <Header  
           title="productify"
           productCount = {data.length} 
           categoryCount = {uniqueCategories} />
 
-        <Category />
-       </div>
+      <Category
+        category={category}
+        onClick={newCategory => setCategory(newCategory)}
+      />
+
+      <Inventory />
+      </div>
 
     <div className ="obj"> 
       {data.map(obj => {

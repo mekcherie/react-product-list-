@@ -1,19 +1,26 @@
 import {catAndCounts} from './data'
 import './Category.css'
 
-function Category() {
-    return (
-        <div className = "Category">
-        {catAndCounts.map(obj => {
-          return (
-            <button>
-              {obj.name}
-              <span> {obj.count} </span>
-            </button>
-         )
-       })}
+function CategoryList(props) {
+  const { category, onClick } = props;
+
+  return (
+    <div className="Category">
+      {catAndCounts.map(obj => {
+        const { name, count } = obj
+        const className = name === category ? 'selected' : '';
+        return (
+          <button
+            className={className}
+            onClick={() => onClick(name)}
+          >
+            {name}
+            <span> {count}</span>
+          </button>
+        )
+      })}
     </div>
-    )
+  )
 }
 
-export default Category
+export default CategoryList;
